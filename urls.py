@@ -1,9 +1,3 @@
-# myproject/urls.py
-# ─────────────────────────────────────────────
-# Main URL Configuration
-# Yahan se saari URLs alag apps ko bhejti hain
-# ─────────────────────────────────────────────
-
 from django.contrib import admin
 from django.urls import path, include
 
