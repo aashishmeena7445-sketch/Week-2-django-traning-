@@ -1,0 +1,76 @@
+<!-- myapp/templates/myapp/home.html -->
+<!-- Home Page — Saare Students List -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Django Learning — Students</title>
+  <style>
+    body { font-family: Arial; background: #f0f4f8; margin: 0; padding: 20px; }
+    .container { max-width: 900px; margin: auto; }
+    h1 { color: #1e3a5f; }
+    .stats { background: #1e3a5f; color: white; padding: 16px 24px; border-radius: 10px; margin-bottom: 20px; }
+    .btn { background: #2b6cb0; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+    th { background: #1e3a5f; color: white; padding: 12px; text-align: left; }
+    td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
+    tr:hover { background: #ebf8ff; }
+    .del-btn { background: #e53e3e; color: white; padding: 5px 12px; border-radius: 6px; text-decoration: none; font-size: 13px; }
+    .view-btn { background: #2b6cb0; color: white; padding: 5px 12px; border-radius: 6px; text-decoration: none; font-size: 13px; }
+    .empty { text-align: center; padding: 40px; color: #a0aec0; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <h1>📚 Django Learning Project</h1>
+
+  <!-- Stats -->
+  <div class="stats">
+    📊 Total Students: <strong>{{ total }}</strong>
+  </div>
+
+  <!-- Add Button -->
+  <a href="{% url 'student-add' %}" class="btn">➕ Student Add Karo</a>
+
+  <br><br>
+
+  <!-- Students Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Naam</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Django Template Loop -->
+      {% for student in students %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.subject }}</td>
+        <td>{{ student.marks }}</td>
+        <td>
+          <a href="{% url 'student-detail' student.pk %}" class="view-btn">👁️ Detail</a>
+          &nbsp;
+          <a href="{% url 'student-delete' student.pk %}" class="del-btn"
+             onclick="return confirm('Delete karna chahte ho?')">🗑️ Delete</a>
+        </td>
+      </tr>
+      {% empty %}
+      <!-- Agar koi student nahi -->
+      <tr><td colspan="6" class="empty">Koi student nahi — pehla student add karo! 🎓</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+</body>
+</html>

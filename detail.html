@@ -1,0 +1,49 @@
+<!-- myapp/templates/myapp/detail.html -->
+<!-- Student Detail Page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ student.name }} — Detail</title>
+  <style>
+    body { font-family: Arial; background: #f0f4f8; margin: 0; padding: 20px; }
+    .container { max-width: 500px; margin: auto; }
+    h1 { color: #1e3a5f; }
+    .card { background: white; padding: 28px; border-radius: 12px; box-shadow: 0 2px 8px #0001; }
+    .row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
+    .label { font-weight: bold; color: #718096; font-size: 14px; }
+    .value { color: #2d3748; font-size: 14px; }
+    .marks { font-size: 32px; font-weight: 800; color: #2b6cb0; text-align: center; padding: 20px; }
+    .btn-back { display: inline-block; background: #1e3a5f; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; margin-top: 16px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>👤 Student Detail</h1>
+
+  <div class="card">
+    <div class="marks">{{ student.marks }} / 100</div>
+
+    <div class="row">
+      <span class="label">Naam</span>
+      <span class="value">{{ student.name }}</span>
+    </div>
+    <div class="row">
+      <span class="label">Email</span>
+      <span class="value">{{ student.email }}</span>
+    </div>
+    <div class="row">
+      <span class="label">Subject</span>
+      <span class="value">{{ student.subject }}</span>
+    </div>
+    <div class="row">
+      <span class="label">Added</span>
+      <span class="value">{{ student.created_at|date:"d M Y" }}</span>
+    </div>
+
+    <a href="{% url 'home' %}" class="btn-back">← Wapas List Pe Jao</a>
+  </div>
+</div>
+</body>
+</html>
