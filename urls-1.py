@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views   # is app ki views import karo
+from . import views   
 
 urlpatterns = [
 
@@ -15,6 +15,6 @@ urlpatterns = [
     # localhost:8000/student/1/ → student detail
     path('student/<int:pk>/', views.student_detail, name='student-detail'),
 
-    # localhost:8000/delete/1/ → student delete
+    # localhost:8000/delete/1/ → student
     path('delete/<int:pk>/', views.student_delete, name='student-delete'),
 ]
