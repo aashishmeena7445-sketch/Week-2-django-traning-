@@ -1,15 +1,9 @@
-# myproject/settings.py
-# ─────────────────────────────────────────────
-# Django Project Configuration File
-# Yahan poori project ki settings hoti hain
-# ─────────────────────────────────────────────
-
 from pathlib import Path
 
 # Project ka base folder
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Security key — production mein change karna
+# Security key —
 SECRET_KEY = 'django-insecure-abc123xyz'
 
 # Development mode ON
@@ -17,8 +11,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# ── INSTALLED APPS ────────────────────────────
-# Yahan sare apps register hote hain
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,8 +51,6 @@ TEMPLATES = [{
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
-# ── DATABASE ──────────────────────────────────
-# SQLite — beginner ke liye sabse aasaan
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
