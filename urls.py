@@ -3,9 +3,7 @@ from django.urls import path, include
 
 urlpatterns = [
     # Admin panel
-    path('admin/', admin.site.urls),
-
-    # Hamari app ki saari URLs
+    path('admin/', admin.site.urls)
     # localhost:8000/         → myapp/urls.py
     path('', include('myapp.urls')),
 ]
