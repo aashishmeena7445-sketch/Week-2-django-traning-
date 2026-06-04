@@ -1,15 +1,10 @@
-# myapp/views.py
-# ─────────────────────────────────────────────
-# VIEWS — Yahan logic hoti hai
-# User request bhejta hai → View response deta hai
-# ─────────────────────────────────────────────
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Student, Subject
 
 
-# ── VIEW 1: Home Page ─────────────────────────
+# ── VIEW 1: Home Pagg
 # URL: localhost:8000/
 def home(request):
     # Saare students database se lo
@@ -24,7 +19,7 @@ def home(request):
     return render(request, 'myapp/home.html', context)
 
 
-# ── VIEW 2: Student Detail ────────────────────
+# ── VIEW 2: Student Detail
 # URL: localhost:8000/student/1/
 def student_detail(request, pk):
     # pk se student dhoondho — nahi mila to 404
