@@ -1,9 +1,3 @@
-# myapp/urls.py
-# ─────────────────────────────────────────────
-# APP URL PATTERNS
-# Har URL ek View se connected hai
-# ─────────────────────────────────────────────
-
 from django.urls import path
 from . import views   # is app ki views import karo
 
