@@ -1,0 +1,16 @@
+// BookCard.jsx (Child Component)
+import React from 'react';
+
+function BookCard({ title, author, available }) {
+  return (
+    <div style={{ border: '1px solid #ccc', padding: '15px', borderRadius: '8px', margin: '10px' }}>
+      <h3>📖 {title}</h3>
+      <p>Author: {author}</p>
+      <span style={{ color: available ? 'green' : 'red' }}>
+        {available ? '● Available' : '● Out of Stock'}
+      </span>
+    </div>
+  );
+}
+
+export default BookCard;
