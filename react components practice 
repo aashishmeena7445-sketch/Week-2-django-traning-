@@ -1,1 +1,0 @@
-In React, everything on the screen is a component (a reusable block of UI). Instead of writing one massive HTML file, you break it into a hierarchy.
